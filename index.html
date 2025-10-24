@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empower — Inspiración y Confianza</title>
+  <style>
+    /* ----------- PALETA EMOCIONAL ----------- */
+    :root {
+      --color-principal: #1f1f2e;       /* Azul oscuro: confianza y fortaleza */
+      --color-secundario: #fff7f3;      /* Rosa melocotón: calidez y empatía */
+      --color-acento: #f7b267;          /* Naranja suave: energía positiva */
+      --color-acento-2: #a5b8f7;        /* Azul lavanda: calma y serenidad */
+      --color-acento-3: #f9d1d1;        /* Rosa claro: ternura y bienestar */
+      --color-texto: #2e2e2e;
+      --color-boton: #f47c48;           /* Coral: motivación y acción */
+      --color-boton-hover: #1f1f2e;     /* Azul oscuro para contraste */
+      --fuente: 'Poppins', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: var(--fuente);
+    }
+
+    body {
+      background: var(--color-secundario);
+      color: var(--color-texto);
+      line-height: 1.6;
+    }
+
+    header {
+      background: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.6rem;
+      color: var(--color-boton);
+      font-weight: 700;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--color-principal);
+      margin-left: 1.5rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--color-acento);
+    }
+
+    /* ----------- HERO ----------- */
+    .hero {
+      background: linear-gradient(135deg, var(--color-acento-2), var(--color-acento-3));
+      padding: 3rem 1.5rem;
+      text-align: center;
+      color: var(--color-principal);
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero button {
+      background: var(--color-boton);
+      color: white;
+      border: none;
+      padding: 0.9rem 1.8rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .hero button:hover {
+      background: var(--color-boton-hover);
+      color: white;
+    }
+
+    /* ----------- PRODUCTOS ----------- */
+    .productos {
+      padding: 2.5rem 1.5rem;
+      background: white;
+      text-align: center;
+    }
+
+    .productos h3 {
+      font-size: 1.8rem;
+      color: var(--color-principal);
+      margin-bottom: 1.2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .producto {
+      background: var(--color-secundario);
+      border-radius: 15px;
+      padding: 1rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .producto:hover {
+      transform: scale(1.03);
+    }
+
+    .producto img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 0.8rem;
+    }
+
+    .producto h4 {
+      color: var(--color-boton);
+      margin-bottom: 0.3rem;
+    }
+
+    .producto p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* ----------- VALORES ----------- */
+    .valores {
+      background: var(--color-acento-3);
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .valores h3 {
+      font-size: 1.8rem;
+      color: var(--color-principal);
+      margin-bottom: 1.5rem;
+    }
+
+    .valores .items {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .valor {
+      background: white;
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+
+    .valor h4 {
+      color: var(--color-acento);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .valor p {
+      color: #444;
+    }
+
+    /* ----------- TESTIMONIOS ----------- */
+    .testimonios {
+      background: linear-gradient(135deg, #fff, var(--color-acento-2));
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .testimonios h3 {
+      font-size: 1.8rem;
+      color: var(--color-principal);
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonio {
+      background: var(--color-secundario);
+      border-radius: 15px;
+      padding: 1.2rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .testimonio p {
+      font-style: italic;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    .testimonio span {
+      font-weight: 600;
+      color: var(--color-boton);
+    }
+
+    /* ----------- CTA FINAL ----------- */
+    .cta {
+      background: var(--color-boton);
+      color: white;
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .cta h3 {
+      font-size: 1.7rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta button {
+      background: white;
+      color: var(--color-boton);
+      padding: 0.8rem 1.8rem;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .cta button:hover {
+      background: var(--color-principal);
+      color: white;
+    }
+
+    footer {
+      background: var(--color-principal);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    /* ----------- RESPONSIVE ----------- */
+    @media (min-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .valores .items {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Empower</h1>
+    <nav>
+      <a href="#productos">Productos</a>
+      <a href="#valores">Valores</a>
+      <a href="#testimonios">Testimonios</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Inspira. Actúa. Confía.</h2>
+    <p>Empower fusiona la energía de Nike con la confianza de Dove para que vivas tu mejor versión: fuerte, libre y auténtica.</p>
+    <button>Explora la colección</button>
+  </section>
+
+  <section id="productos" class="productos">
+    <h3>Productos destacados</h3>
+    <div class="grid">
+      <div class="producto">
+        <img src="airflexwomen.jpg" alt="Zapatillas deportivas">
+        <h4>AirFlex Women</h4>
+        <p>Rendimiento y ligereza. 
+          <p></p>Diseñadas para impulsarte en cada paso.</p>
+      </div>
+      <div class="producto">
+        <img src="glowskin.jpg" alt="Crema corporal">
+        <h4>PureGlow Skin</h4>
+        <p>Hidratación profunda con ingredientes naturales que nutren tu piel.</p>
+      </div>
+      <div class="producto">
+        <img src="ropafit.jpg" alt="Ropa deportiva">
+        <h4>Balance Fit</h4>
+        <p>Comodidad y estilo para entrenar y vivir con confianza cada día.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="valores" class="valores">
+    <h3>Nuestros valores</h3>
+    <div class="items">
+      <div class="valor">
+        <h4>Autenticidad</h4>
+        <p>Creemos en la belleza de ser tú misma, sin filtros. Cada producto refleja esa autenticidad.</p>
+      </div>
+      <div class="valor">
+        <h4>Superación</h4>
+        <p>Motivamos a cada persona a alcanzar su máximo potencial, dentro y fuera del deporte.</p>
+      </div>
+      <div class="valor">
+        <h4>Diversidad</h4>
+        <p>Celebramos todas las formas, colores y caminos de vida. Porque todos merecen sentirse poderosos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonios" class="testimonios">
+    <h3>Lo que dicen nuestros usuarios</h3>
+    <div class="testimonio">
+      <p>“Nunca había sentido tanta energía y confianza. Empower me inspira todos los días.”</p>
+      <span>— Valeria G.</span>
+    </div>
+    <div class="testimonio">
+      <p>“Productos que realmente me entienden. Piel sana y motivación para entrenar.”</p>
+      <span>— Sofía L.</span>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h3>Transforma tu día con Empower</h3>
+    <button>Únete ahora</button>
+  </section>
+
+  <footer>
+    <p>© 2025 Empower Brand. Inspiración y confianza para todos.</p>
+  </footer>
+</body>
+</html>
+
